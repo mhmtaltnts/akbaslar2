@@ -27,7 +27,7 @@ const User = ({ userId }) => {
                 <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
                 <td className={`table__cell ${cellStatus}`}>
                     <button
-                        className="icon-button table__button"
+                        className="table__button"
                         onClick={handleEdit}
                     >
                         <FontAwesomeIcon icon={faPenToSquare} />

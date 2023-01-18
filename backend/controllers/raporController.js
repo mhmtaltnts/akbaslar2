@@ -1,7 +1,7 @@
 const Note = require('../models/Note')
 const User = require('../models/User')
 
-const NOTES_PER_PAGE = 10
+const NOTES_PER_PAGE = 100
 
 const rapor = async (req, res) => {
 
@@ -19,7 +19,7 @@ const rapor = async (req, res) => {
             .limit(NOTES_PER_PAGE)
             
             
-        const pageCount = count / NOTES_PER_PAGE
+        const pageCount = count <= 100 ? 1 : Math.ceil(count / NOTES_PER_PAGE)
         return res.json({
             pagination: {
                 count,

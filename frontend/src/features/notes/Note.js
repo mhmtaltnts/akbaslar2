@@ -14,9 +14,14 @@ const Note = ({ noteId }) => {
         }),
     })
 
+    let options = {
+        dateStyle: "short",
+        timeStyle: "short",
+    }
+
     const navigate = useNavigate()
     /* const yonClass = isAdmin || isManager ? "yonetici" : ""; */
-
+    const created = new Date(note.createdAt).toLocaleString('tr-TR', options)
     if (note) {
         const handleEdit = () => navigate(`/dash/notes/${noteId}`)
         const handleCikis = () => navigate(`/dash/cikis/${noteId}`)
@@ -28,32 +33,34 @@ const Note = ({ noteId }) => {
                 <td className="table__cell">{note.dorse}</td>
                 <td className="table__cell tablet">{note.firma}</td>
                 <td className="table__cell tablet">{note.mal}</td>
-                <td className="table__cell tablet">{note.gumruk}</td>
+                <td className="table__cell ">{note.gumruk}</td>
+                <td className="table__cell tablet">{created}</td>
+                <td className="table__cell tablet">{note.girisYapan}</td>
                 
                 <td className="table__cell">
                     <button
-                        className="table__button success__button"
+                        className="button__success"
                         onClick={handleGumruk}
                     >
-                       <FontAwesomeIcon icon={faPenToSquare} />
+                       Gümrük
                     </button>
                 </td>
                 
                 <td className="table__cell">
                     <button
-                        className="table__button warning__button"
+                        className="button__danger"
                         onClick={handleCikis}
                     >
-                      <FontAwesomeIcon icon={faPenToSquare} />
+                      Çıkış
                     </button>
                 </td>
 
                 {(isAdmin || isManager) && <td className="table__cell">
                     <button
-                        className="table__button "
+                        className="button__warning"
                         onClick={handleEdit}
                     >
-                        <FontAwesomeIcon icon={faPenToSquare} />
+                        Değiştir
                     </button>
                 </td>}
             </tr>

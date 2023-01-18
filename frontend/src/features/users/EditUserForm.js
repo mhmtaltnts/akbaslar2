@@ -162,19 +162,22 @@ const EditUserForm = ({ user }) => {
                     />
                 </label>
 
-                <label className="form__label" htmlFor="roles">
-                    Roller:</label>
-                <select
-                    id="roles"
-                    name="roles"
-                    className={`form__select ${validRolesClass}`}
-                    multiple={true}
-                    size="3"
-                    value={roles}
-                    onChange={onRolesChanged}
-                >
-                    {options}
-                </select>
+                <div className="form-group">
+                    <label className="form__label" htmlFor="roles">
+                        Roller:</label>
+                    <select
+                        id="roles"
+                        name="roles"
+                        className={`form__select ${validRolesClass}`}
+                        multiple={true}
+                        size="3"
+                        value={roles}
+                        onChange={onRolesChanged}
+                    >
+                        {options}
+                    </select>
+                </div>
+
                 
             </form>
         </>

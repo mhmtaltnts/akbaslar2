@@ -37,7 +37,7 @@ const Public = () => {
                         </address>
                     </div>
                     <div className='footer_wrapper'>
-                        <a href="tel:+902627541406">tel: +90 262 754 14 06</a>
+                        <a href="tel:+902627541406">Tel: +90 262 754 14 06</a>
                     </div>
                 
             </footer>

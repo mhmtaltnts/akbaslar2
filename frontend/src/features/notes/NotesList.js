@@ -51,8 +51,10 @@ const NotesList = () => {
         const tableContent = ids?.length && filteredIds.map(noteId => <Note key={noteId} noteId={noteId} />)
     
         content = (<>
+        <div className="searchAndCount">
             <h2 className="aracsayisi">Parkta mevcut araç sayısı: {count}</h2>
             <SearchBar setSearch={setSearch}/>
+        </div>
 
             <table className={`table table--notes ${calClass}`}>
                 <thead className="table__thead">
@@ -62,9 +64,11 @@ const NotesList = () => {
                         <th scope="col" className="table__th tablet">Firma</th>
                         <th scope="col" className="table__th tablet">Malın Cinsi</th>
                         <th scope="col" className="table__th tablet">Gümrük Bilgi</th>
-                        <th scope="col" className="table__th">Gümrük İşlem</th>  
-                        <th scope="col" className="table__th">Çıkış Yap</th>
-                        {(isAdmin || isManager) && <th scope="col" className="table__th">Düzenle</th>}
+                        <th scope="col" className="table__th">Giriş Tarihi</th>
+                        <th scope="col" className="table__th">Giriş Yapan</th>
+                        <th scope="col" className="table__th">   </th>  
+                        <th scope="col" className="table__th">   </th>
+                        {(isAdmin || isManager) && <th scope="col" className="table__th">  </th>}
                     </tr>
                 </thead>
                 <tbody>

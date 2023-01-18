@@ -76,10 +76,10 @@ const Login = () => {
                 <div className='form_wrapper'>               
 
                 <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
-                <h1>Sisteme Giriş</h1>
+                <h1 style={{marginTop:"25px"}}>Sisteme Giriş</h1>
 
-                <form className="form" onSubmit={handleSubmit}>
-                    <label htmlFor="username">Kullanıcı Adı:</label>
+                <form className="form__login" onSubmit={handleSubmit}>
+                                        
                     <input
                         className="form__input"
                         type="text"
@@ -88,19 +88,21 @@ const Login = () => {
                         value={username}
                         onChange={handleUserInput}
                         autoComplete="off"
+                        placeholder='Kullanıcı Adı'
                         required
                     />
 
-                    <label htmlFor="password">Şifre:</label>
+                    
                     <input
                         className="form__input"
                         type="password"
                         id="password"
                         onChange={handlePwdInput}
                         value={password}
+                        placeholder="Şifre"
                         required
                     />
-                    <button className="form__submit-button">Giriş Yap</button>
+                    <button className="btn button__primary">Giriş Yap</button>
 
 
                     <label htmlFor="persist" className="form__persist">
@@ -111,7 +113,7 @@ const Login = () => {
                             onChange={handleToggle}
                             checked={persist}
                         />
-                        Bu cihaza güven
+                        Şifremi Kaydet
                     </label>
                 </form>
                 </div>

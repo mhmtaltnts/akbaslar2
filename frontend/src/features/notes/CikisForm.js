@@ -67,8 +67,7 @@ const CikisForm = ({ note }) => {
                     </button>
                 </div>
                 </div>
-                <label className="form__label" htmlFor="goturen">
-                    Götüren Çekici Plakası:</label>
+                
                 <input
                     className={`form__input ${validGoturenClass}`}
                     id="goturen"
@@ -76,6 +75,7 @@ const CikisForm = ({ note }) => {
                     type="text"
                     autoComplete="off"
                     value={goturen}
+                    placeholder="Götüren Çekici Plakası"
                     onChange={onGoturenChanged}
                 />
                 

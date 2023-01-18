@@ -90,7 +90,7 @@ const NewUserForm = () => {
                     <div className="form__action-buttons">
                     <button
                         className="form__button icon-button success__button"
-                        title="Save"
+                        title="Kaydet"
                         disabled={!canSave}
                     >
                         <FontAwesomeIcon icon={faSave} />
