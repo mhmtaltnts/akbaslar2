@@ -63,9 +63,9 @@ const NotesList = () => {
                         <th scope="col" className="table__th">Dorse Plakası</th>
                         <th scope="col" className="table__th tablet">Firma</th>
                         <th scope="col" className="table__th tablet">Malın Cinsi</th>
-                        <th scope="col" className="table__th tablet">Gümrük Bilgi</th>
-                        <th scope="col" className="table__th">Giriş Tarihi</th>
-                        <th scope="col" className="table__th">Giriş Yapan</th>
+                        <th scope="col" className="table__th">Gümrük Bilgi</th>
+                        <th scope="col" className="table__th tablet">Giriş Tarihi</th>
+                        <th scope="col" className="table__th tablet">Giriş Yapan</th>
                         <th scope="col" className="table__th">   </th>  
                         <th scope="col" className="table__th">   </th>
                         {(isAdmin || isManager) && <th scope="col" className="table__th">  </th>}

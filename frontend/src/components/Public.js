@@ -13,8 +13,8 @@ const Public = () => {
             <header className='dash-header'>
             <div className='dash-header__container'>
                     <div className='logo__text'>
-                        <h1 className="dash-header__title">Gebze Konak</h1>
-                        <p style={{fontSize:"1rem", textAlign: "center", fontWeight:"bold"  }}>Tır Parkı</p>
+                        <h1 className="dash-header__title" style={{fontFamily: ['Allura', "cursive"], fontSize: "53px"}}>Gebze Konak</h1>
+                        <p style={{fontSize:"1rem", textAlign: "center", fontWeight:"bold", fontFamily: ['Allura', "cursive"], fontSize: "33px"  }}>Tır Parkı</p>
                     </div>
                     <button
                 className="dash-header__button icon-button primary__button"

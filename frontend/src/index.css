@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Macondo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Macondo&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -35,6 +35,13 @@
 html {
   font-size: 16px;
 }
+h1{
+  font-weight: 300;
+  font-size: 39px;
+}
+h2{
+  font-weight: 300;
+}
 
 body {
   display: block;
@@ -43,20 +50,27 @@ body {
   color: var(--COLOR);
   
 }
-footer{
-  display: block;
+.dash-footer {
+  font-size: 0.9rem;
   width: 100%;
-}
-.footer_wrapper{
+  background-color: var(--BG-FOOTER-COLOR);
+  padding: 0.5em;
+  border-top: 1px solid var(--BORDER-COLOR);
   display: flex;
+  justify-content: center;
+  
+}
+.footer-wrapper{
+  display: flex;
+  width: 95%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
-.footer__username{
-  font-weight: 700;
-}
+
+
+
 
 input{
   overflow: visible;
@@ -288,7 +302,9 @@ a:focus-visible {
 .public__addr {
   margin-top: 0em;
 }
-
+.welcome{
+  margin-top: 25px;
+}
 .welcome a::before {
   content: "➜ "
 }
@@ -338,15 +354,6 @@ a:focus-visible {
   
 }
 
-.dash-footer {
-  font-size: 0.9rem;
-  background-color: var(--BG-FOOTER-COLOR);
-  padding: 0.5em;
-  border-top: 1px solid var(--BORDER-COLOR);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-}
 
 .dash-footer__button {
   font-size: 1.5rem;
@@ -376,14 +383,6 @@ tbody{
   width: 100%;
 }
 
-.logo__text:hover{
-  background-color: #6366f1;
-  color: #fff;
-  border-radius: 5px;
-  padding-left: 15px;
-  padding-right: 15px;
-
-}
 
 .table {
   font-size: 1rem;
@@ -468,7 +467,10 @@ tbody{
   display: flex;
   flex-direction: row;
   width: 90%;
-  justify-content: space-between;
+  justify-content: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  gap:35px;
 }
 .iter{
   display: flex;
@@ -502,17 +504,14 @@ tbody{
   display: flex;
   margin-top: 25px;
   flex-direction: column;
-  width: 800px;
-  justify-content: flex-start;
-  align-items: stretch;
+  width: 700px;
 }
 
 .form__login {
-  margin-top: 25px;
   display: flex;
   width: 400px;
   flex-flow: column nowrap;
-  gap: 0.75em;
+  
   
 }
 
@@ -532,9 +531,10 @@ tbody{
 
 .form__title-row {
   display: flex;
-  margin: 15px 0 15px 0;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  margin-bottom: 25px;
+  
 }
 .form-group{
   margin-top: 15px;
@@ -644,11 +644,29 @@ option {
     width: 100%;
     grid-template-columns: repeat(3, 1fr);  
   }
-  .form__login {
-    margin-top: 15px;    
-    width: 100%;
+  .form__login {    
+    width: 95%;
     flex-flow: column nowrap;
-    gap: 0.75em;    
+      
+  }
+
+  .searchAndpagination{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    gap:5px;
+  }
+
+  .inner_wrapper{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
   }
 
   .button__success {
@@ -693,14 +711,14 @@ option {
     display: none;
   }
   .yonetici {
-    grid-template-columns: repeat(3, 2fr) repeat(3, 1fr) ;
+    grid-template-columns: repeat(2, 1fr) repeat(3, 1fr) ;
   }
   .calisan {
-    grid-template-columns: repeat(3, 2fr) repeat(2, 0.5fr) ;
+    grid-template-columns: repeat(2, 1fr) repeat(2, 1fr) ;
   }
   
   .table_rapor {
-    grid-template-columns: repeat(7, 1fr) ;
+    grid-template-columns: repeat(5, 1fr) ;
 
   }
 
@@ -721,16 +739,13 @@ option {
   }
   
   .form_wrapper{
-    width: 100%;
+    width: 95%;
   }
   
   .form__button{
     font-size: 1.7rem;
   }
-   
-  .svg-inline--fa{
-    filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
-  }
+
   
   .table__th,
   .table__cell {
@@ -772,7 +787,7 @@ option {
     height: 32px;
   }
   .form_wrapper{
-    width: 100%;
+    width: 85%;
   }
   h1{
     font-size: 1.5rem;
@@ -786,13 +801,13 @@ option {
     display: none;
   }
   .yonetici {
-    grid-template-columns: repeat(7, 2fr) repeat(3, 0.5fr) ;
+    grid-template-columns: repeat(3, 1fr) repeat(3, 1fr) ;
   }
   .calisan {
-    grid-template-columns: repeat(4, 2fr) repeat(2, 0.5fr) ;
+    grid-template-columns: repeat(3, 1fr) repeat(2, 1fr) ;
   }
   .table_rapor {
-    grid-template-columns: repeat(7, 1fr) ;
+    grid-template-columns: repeat(6, 1fr) ;
 
   }  
 
@@ -824,7 +839,7 @@ option {
   }
   
   .form_wrapper{
-    width: 100%;
+    width: 767px;
   }
 
   .table {

@@ -128,7 +128,7 @@ const DashHeader = () => {
         <>
             <p className={errClass}>{error?.data?.message}</p>
 
-            <header className="dash-header">
+            <header className="dash-header" style={{fontFamily: ['Allura', "cursive"]}}>
                 <div className={`dash-header__container `}>                           
                     <Link to="/dash" className='logo__text'>
                         <h1 className="dash-header__title">Gebze Konak</h1>

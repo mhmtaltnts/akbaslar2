@@ -58,22 +58,25 @@ const NewNoteForm = () => {
     const content = (
         <div className="form_wrapper">
             <p className={errClass}>{error?.data?.message}</p>
+               <div className="form__title-row">
+               <h2>Yeni Park Girişi</h2>
+                    <div className="form__action-buttons-wrapper">
+                     <div className="form__action-buttons">
+                        <button
+                            className="form__button icon-button success__button"
+                            title="Save"
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon icon={faSave} />
+                        </button>
+                     </div>
+                    </div>
+
+                    
+               </div>
 
             <form className="form" onSubmit={onSaveNoteClicked}>
-                <div className="form__title-row">
-                    <h2>Yeni Park Girişi</h2>
-                </div>
-                <div className="form__action-buttons">
-                    <button
-                        className="form__button icon-button success__button"
-                        title="Save"
-                        disabled={!canSave}
-                    >
-                        <FontAwesomeIcon icon={faSave} />
-                    </button>
-                </div>
-                <label className="form__label" htmlFor="getiren">
-                    Getiren Çekici Plakası:</label>
+                         
                 <input
                     className={`form__input ${validGetirenClass}`}
                     id="getiren"
@@ -81,11 +84,10 @@ const NewNoteForm = () => {
                     type="text"
                     autoComplete="off"
                     value={getiren}
+                    placeholder="Getiren Çekici Plakası"
                     onChange={onGetirenChanged}
                 />
 
-                <label className="form__label" htmlFor="dorse">
-                    Dorse Plakası:</label>
                 <input
                     className={`form__input form__input--text ${validDorseClass}`}
                     id="dorse"
@@ -93,10 +95,10 @@ const NewNoteForm = () => {
                     type="text"
                     autoComplete="off"
                     value={dorse}
+                    placeholder="Dorse Plakası"
                     onChange={onDorseChanged}
                 />
-                <label className="form__label" htmlFor="firma">
-                    Firma:</label>
+                
                 <input
                     className={`form__input form__input--text`}
                     id="firma"
@@ -104,11 +106,10 @@ const NewNoteForm = () => {
                     type="text"
                     autoComplete="off"
                     value={firma}
+                    placeholder="Firma"
                     onChange={onFirmaChanged}
                 />
                 
-                <label className="form__label" htmlFor="firma">
-                    Malın Cinsi:</label>
                 <input
                     className={`form__input form__input--text `}
                     id="mal"
@@ -116,6 +117,7 @@ const NewNoteForm = () => {
                     type="text"
                     autoComplete="off"
                     value={mal}
+                    placeholder="Malın Cinsi"
                     onChange={onMalChanged}
                 />
                                

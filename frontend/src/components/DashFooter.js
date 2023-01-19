@@ -44,11 +44,13 @@ const DashFooter = () => {
 
     const content = (
         <footer className="dash-footer">
-            <div className='footer_wrapper'>
-                {goHomeButton}
-            </div>
-            <div className='footer_wrapper'>
-                <p className="footer__username">Kullanıcı: {username}</p>
+            <div className="footer-wrapper">
+                <div className='footer_left'>
+                    {goHomeButton}
+                </div>
+                <div className='footer_right'>
+                    <h2 className="footer__username">Sağlıklı günler "{username}"</h2>
+                </div>
             </div>
             {/* <p>{today}</p> */}
         </footer>

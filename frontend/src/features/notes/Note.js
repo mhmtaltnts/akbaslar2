@@ -51,7 +51,7 @@ const Note = ({ noteId }) => {
                         className="button__danger"
                         onClick={handleCikis}
                     >
-                      Çıkış
+                      Çıkış Yap
                     </button>
                 </td>
 

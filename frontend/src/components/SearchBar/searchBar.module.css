@@ -3,7 +3,6 @@
   .search {      
     border: 1px solid rgb(96, 142, 242);
     border-radius: 2em;
-    width: 55%;
     overflow: hidden;
     display: flex;
     flex-flow: row nowrap;
@@ -24,7 +23,6 @@
   
   .search__input {
     font-size: 1.1rem;
-    width: 100%;
   }
   
   .search__button {
@@ -37,28 +35,15 @@
   }
   
   @media (0px < width <= 640px) {
-    .search {
-      width: 95%;
-    }
-    .search__input {
-      font-size: 1.1rem;      
-    }
+    
+   
   
   }
   
   @media (640px < width <= 768px) {
-    .search {
-      width: 85%;
-      padding: 5px;
-    }
-  
-    .search__button {
-      padding-right: 0.5em;
-    }
+    
   }
 
   @media (768px < width <= 1024px){
-    .search {
-      width: 55%;
-    }
+    
   }

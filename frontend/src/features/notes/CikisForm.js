@@ -50,24 +50,29 @@ const CikisForm = ({ note }) => {
     const errContent = (error?.data?.message) ?? ''
     
     const content = (
+        
         <div className="form_wrapper">
             <p className={errClass}>{errContent}</p>
+            <div className="form__title-row">
+            <h2>Park Araç Çıkışı</h2>
+                <div className="form__action-buttons-wrapper">
+                   <div className="form__action-buttons">
+                        <button
+                            className="form__button icon-button success__button"
+                            title="Save"
+                            onClick={onSaveNoteClicked}
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon icon={faSave} />
+                        </button>
+                    </div>
+                    
+                    
+               </div>
+            </div>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
-                    <h2>Park Araç Çıkışı</h2>
-                    <div className="form__action-buttons">
-                    <button
-                        className="form__button icon-button success__button"
-                        title="Save"
-                        onClick={onSaveNoteClicked}
-                        disabled={!canSave}
-                    >
-                        <FontAwesomeIcon icon={faSave} />
-                    </button>
-                </div>
-                </div>
-                
+                                
                 <input
                     className={`form__input ${validGoturenClass}`}
                     id="goturen"
@@ -81,6 +86,7 @@ const CikisForm = ({ note }) => {
                 
             </form>
         </div>
+        
     )
 
     return content

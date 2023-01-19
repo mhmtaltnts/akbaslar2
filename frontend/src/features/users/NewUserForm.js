@@ -81,24 +81,26 @@ const NewUserForm = () => {
 
 
     const content = (
-        <>
+        <div className="form_wrapper">
             <p className={errClass}>{error?.data?.message}</p>
-
             <form className="form" onSubmit={onSaveUserClicked}>
                 <div className="form__title-row">
-                    <h2>Yeni Kullanıcı</h2>
-                    <div className="form__action-buttons">
-                    <button
-                        className="form__button icon-button success__button"
-                        title="Kaydet"
-                        disabled={!canSave}
-                    >
-                        <FontAwesomeIcon icon={faSave} />
-                    </button>
-                </div>
+                <h2>Yeni Kullanıcı</h2>
+                    <div className="form__action-buttons-wrapper">
+                        <div className="form__action-buttons">
+                            <button
+                                className="form__button icon-button success__button"
+                                title="Kaydet"
+                                disabled={!canSave}
+                            >
+                                <FontAwesomeIcon icon={faSave} />
+                            </button>
+                        </div>                        
+                    </div> 
+               
                 </div>
                 <label className="form__label" htmlFor="username">
-                    Kullanıcı Adı: <span className="nowrap">[3-20 karakter]</span></label>
+                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(sayı içermemeli, 3 - 20 arası harften oluşmalı)</span></label>
                 <input
                     className={`form__input ${validUserClass}`}
                     id="username"
@@ -110,7 +112,8 @@ const NewUserForm = () => {
                 />
 
                 <label className="form__label" htmlFor="password">
-                    Şifre: <span className="nowrap">[4-12 karakter]</span></label>
+                     <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#87CEFA"}} >(!@#$% gibi 4-12 arası karakter)</span>
+                </label>
                 <input
                     className={`form__input ${validPwdClass}`}
                     id="password"
@@ -119,7 +122,8 @@ const NewUserForm = () => {
                     value={password}
                     onChange={onPasswordChanged}
                 />
-
+    
+            <div className="form-group">
                 <label className="form__label" htmlFor="roles">
                     Rolleri:</label>
                 <select
@@ -133,9 +137,9 @@ const NewUserForm = () => {
                 >
                     {options}
                 </select>
-
+                </div>
             </form>
-        </>
+        </div>
     )
 
     return content

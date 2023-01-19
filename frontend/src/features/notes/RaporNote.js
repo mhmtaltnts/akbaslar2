@@ -27,14 +27,14 @@ const RaporNote = ({ noteId, page }) => {
 
         return (
             <tr className="table__row">
-                <td className="table__cell">{note.dorse}</td>
-                <td className="table__cell">{note.getiren}</td>
-                <td className="table__cell">{note.goturen}</td>
-                <td className="table__cell">{note.firma}</td>
-                <td className="table__cell">{note.mal}</td>
-                <td className="table__cell">{note.gumruk}</td>
-                <td className="table__cell note__created">{created}</td>
-                <td className="table__cell note__updated">{cikisTarihi}</td>
+                <td className="table__cell ">{note.dorse}</td>
+                <td className="table__cell mobile">{note.getiren}</td>
+                <td className="table__cell ">{note.goturen}</td>
+                <td className="table__cell ">{note.firma}</td>
+                <td className="table__cell tablet">{note.mal}</td>
+                <td className="table__cell ">{note.gumruk}</td>
+                <td className="table__cell tablet">{created}</td>
+                <td className="table__cell tablet">{cikisTarihi}</td>
                 <td className="table__cell">{kaldigiGun}</td>
             </tr>
         )

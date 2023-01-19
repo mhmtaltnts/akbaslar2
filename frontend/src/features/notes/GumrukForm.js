@@ -55,30 +55,32 @@ const EditGumrukForm = ({ note }) => {
     const content = (
         <div className="form_wrapper">
             <p className={errClass}>{errContent}</p>
+            <div className="form__title-row">
+            <h2>Gümrük Veri Girişi</h2>                
+                <div className="form__action-buttons-wrapper">
+                    <div className="form__action-buttons">
+                        <button
+                            className="form__button icon-button success__button"
+                            title="Save"
+                            onClick={onSaveNoteClicked}
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon icon={faSave} />
+                        </button>
+                    </div>
+                </div>
+                
+            </div>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
-                    <h2>Gümrük Veri Girişi</h2>
-                    <div className="form__action-buttons">
-                    <button
-                        className="form__button icon-button success__button"
-                        title="Save"
-                        onClick={onSaveNoteClicked}
-                        disabled={!canSave}
-                    >
-                        <FontAwesomeIcon icon={faSave} />
-                    </button>
-                </div>
-                    
-                </div>
-                <label className="form__label" htmlFor="gumruk">
-                    Gümrük Bilgileri:</label>
+                                
                 <input
                     className={`form__input ${validGumrukClass}`}
                     id="gumruk"
                     name="gumruk"
                     type="text"
                     autoComplete="off"
+                    placeholder="Gümrük bilgilerini yzınız"
                     value={gumruk}
                     onChange={onGumrukChanged}
                 />

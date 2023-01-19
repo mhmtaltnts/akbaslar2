@@ -91,24 +91,26 @@ const EditNoteForm = ({ note }) => {
         <div className="form_wrapper">
             
             <p className={errClass}>{errContent}</p>
+            <div className="form__title-row">
+            <h2>Kayıt Düzenle</h2>
+                <div className="form__action-buttons-wrapper">
+                    <div className="form__action-buttons">
+                        <button
+                            className="form__button icon-button success__button"
+                            title="Kaydet"
+                            onClick={onSaveNoteClicked}
+                            disabled={!canSave}
+                        >
+                            <FontAwesomeIcon icon={faSave} />
+                        </button>
+                        {deleteButton}
+                    </div>
+                </div>
+                                    
+            </div>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
-                    <h2>Kayıt Düzenle</h2>                    
-                </div>
-                <div className="form__action-buttons-wrapper">
-                <div className="form__action-buttons">
-                    <button
-                        className="form__button icon-button success__button"
-                        title="Kaydet"
-                        onClick={onSaveNoteClicked}
-                        disabled={!canSave}
-                    >
-                        <FontAwesomeIcon icon={faSave} />
-                    </button>
-                    {deleteButton}
-                </div>
-                </div> 
+                                 
                 <label className="form__label" htmlFor="getiren">
                     Getiren Çekici Plakası:</label>
                 <input

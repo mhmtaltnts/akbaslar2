@@ -102,33 +102,36 @@ const EditUserForm = ({ user }) => {
 
 
     const content = (
-        <>
+        <div className="form_wrapper">
             <p className={errClass}>{errContent}</p>
 
             <form className="form" onSubmit={e => e.preventDefault()}>
-                <div className="form__title-row">
-                    <h2>Kullanıcı Düzenle</h2>
                 
-                <div className="form__action-buttons">
-                        <button
-                            className="form__button icon-button success__button"
-                            title="Save"
-                            onClick={onSaveUserClicked}
-                            disabled={!canSave}
-                        >
-                            <FontAwesomeIcon icon={faSave} />
-                        </button>
-                        <button
-                            className="form__button icon-button danger__button"
-                            title="Delete"
-                            onClick={onDeleteUserClicked}
-                        >
-                            <FontAwesomeIcon icon={faTrashCan} />
-                        </button>
-                    </div>
-                    </div>
+                <div className="form__title-row">
+                <h2>Kullanıcı Düzenle</h2>                   
+                     <div className="form__action-buttons-wrapper">
+                        <div className="form__action-buttons">
+                            <button
+                                className="form__button icon-button success__button"
+                                title="Save"
+                                onClick={onSaveUserClicked}
+                                disabled={!canSave}
+                            >
+                                <FontAwesomeIcon icon={faSave} />
+                            </button>
+                            <button
+                                className="form__button icon-button danger__button"
+                                title="Delete"
+                                onClick={onDeleteUserClicked}
+                            >
+                                <FontAwesomeIcon icon={faTrashCan} />
+                            </button>
+                        </div>
+                    </div> 
+                    
+                </div>
                 <label className="form__label" htmlFor="username">
-                    Kullanıcı Adı: <span className="nowrap">[3-20 karakter]</span></label>
+                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(sayı içermemeli, 3 - 20 arası harften oluşmalı)</span></label>
                 <input
                     className={`form__input ${validUserClass}`}
                     id="username"
@@ -140,7 +143,7 @@ const EditUserForm = ({ user }) => {
                 />
 
                 <label className="form__label" htmlFor="password">
-                    Şifre: <span className="nowrap">[şifreyi değiştirmek istemiyorsanız boş burakın]</span> <span className="nowrap">[4-12 karakter]</span></label>
+                    <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(şifreyi değiştirmek istemiyorsanız boş burakın)</span></label>
                 <input
                     className={`form__input ${validPwdClass}`}
                     id="password"
@@ -180,7 +183,7 @@ const EditUserForm = ({ user }) => {
 
                 
             </form>
-        </>
+        </div>
     )
 
     return content

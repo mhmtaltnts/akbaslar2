@@ -67,55 +67,53 @@ const Login = () => {
             <header className='dash-header'>
                 <div className='dash-header__container'>
                 <div className='logo__text' onClick={onGoHomeClicked}>
-                        <h1 className="dash-header__title">Gebze Konak</h1>
-                        <p style={{fontSize:"1rem", textAlign: "center", fontWeight:"bold"  }}>Tır Parkı</p>
-                    </div>
+                    <h1 className="dash-header__title" style={{fontFamily: ['Allura', "cursive"], fontSize: "53px"}}>Gebze Konak Tır Parkı</h1>
+                </div>
                 </div>
             </header>
             <main className="dash-container">
-                <div className='form_wrapper'>               
+                <div className='wrapper'>
+                    <div className='inner_wrapper'> 
+                    <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
+                    <h1 style={{marginTop:"25px"}}>Sisteme Giriş</h1>
 
-                <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
-                <h1 style={{marginTop:"25px"}}>Sisteme Giriş</h1>
-
-                <form className="form__login" onSubmit={handleSubmit}>
-                                        
-                    <input
-                        className="form__input"
-                        type="text"
-                        id="username"
-                        ref={userRef}
-                        value={username}
-                        onChange={handleUserInput}
-                        autoComplete="off"
-                        placeholder='Kullanıcı Adı'
-                        required
-                    />
-
-                    
-                    <input
-                        className="form__input"
-                        type="password"
-                        id="password"
-                        onChange={handlePwdInput}
-                        value={password}
-                        placeholder="Şifre"
-                        required
-                    />
-                    <button className="btn button__primary">Giriş Yap</button>
-
-
-                    <label htmlFor="persist" className="form__persist">
+                    <form className="form__login" onSubmit={handleSubmit}>                                        
                         <input
-                            type="checkbox"
-                            className="form__checkbox"
-                            id="persist"
-                            onChange={handleToggle}
-                            checked={persist}
+                            className="form__input"
+                            type="text"
+                            id="username"
+                            ref={userRef}
+                            value={username}
+                            onChange={handleUserInput}
+                            autoComplete="off"
+                            placeholder='Kullanıcı Adı'
+                            required
                         />
-                        Şifremi Kaydet
-                    </label>
-                </form>
+                        
+                        <input
+                            className="form__input"
+                            type="password"
+                            id="password"
+                            onChange={handlePwdInput}
+                            value={password}
+                            placeholder="Şifre"
+                            required
+                        />
+                        <button className="btn button__primary">Giriş Yap</button>
+
+                        <label htmlFor="persist" className="form__persist">
+                            <input
+                                type="checkbox"
+                                className="form__checkbox"
+                                id="persist"
+                                onChange={handleToggle}
+                                checked={persist}
+                            />
+                            Şifremi Kaydet
+                        </label>
+                    </form>
+
+                    </div>
                 </div>
             </main>
             <footer className='dash-footer'>

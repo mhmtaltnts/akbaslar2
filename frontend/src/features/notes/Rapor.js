@@ -73,7 +73,7 @@ const Rapor = () => {
                 <SearchBar setSearch={setSearch}/>
                 <div className="iter">
                     <button style={{height:"45px", width:"45px"}} disabled={page === 1} onClick={handlePrevious}><FontAwesomeIcon  icon={faAnglesLeft} /></button>
-                    <p style={{height:"45px", width:"45px", textAlign:"center", lineHeight: 2.3, marginLeft:"15px", marginRight:"15px"}}>{page}/{pageCount}</p>
+                    <p style={{height:"45px", width:"45px", textAlign:"center", lineHeight: 2.3, marginLeft:"5px", marginRight:"5px"}}>{page}/{pageCount}</p>
                     <button style={{height:"45px", width:"45px"}} disabled={page === pageCount} onClick={handleNext}><FontAwesomeIcon icon={faAnglesRight} /></button>
                 </div>
             </div>
@@ -81,13 +81,13 @@ const Rapor = () => {
                 <thead className="table__thead">
                     <tr>
                         <th scope="col" className="table__th">Dorse Plakası</th>
-                        <th scope="col" className="table__th">Getiren Çekici</th>
+                        <th scope="col" className="table__th mobile">Getiren Çekici</th>
                         <th scope="col" className="table__th">Götüren Çekici</th>
                         <th scope="col" className="table__th">Firma</th>
-                        <th scope="col" className="table__th">Malın Cinsi</th>
+                        <th scope="col" className="table__th tablet">Malın Cinsi</th>
                         <th scope="col" className="table__th">Gümrük Kayıt</th>
-                        <th scope="col" className="table__th note__created">Giriş Tarihi</th>
-                        <th scope="col" className="table__th note__updated">Çıkış Tarihi</th>
+                        <th scope="col" className="table__th tablet">Giriş Tarihi</th>
+                        <th scope="col" className="table__th tablet">Çıkış Tarihi</th>
                         <th scope="col" className="table__th">Kaldığı Gün</th>
                     </tr>
                 </thead>
