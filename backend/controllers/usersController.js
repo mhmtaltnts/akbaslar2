@@ -103,11 +103,11 @@ const deleteUser = async (req, res) => {
         return res.status(400).json({ message: 'Kullanıcı ID gerekli' })
     }
 
-    // Does the user still have assigned notes?
+    /* // Does the user still have assigned notes?
     const note = await Note.findOne({ user: id }).lean().exec()
     if (note) {
         return res.status(400).json({ message: 'Kullanıcı tarafından düzenlenmiş kayıtlar var' })
-    }
+    } */
 
     // Does the user exist to delete?
     const user = await User.findById(id).exec()

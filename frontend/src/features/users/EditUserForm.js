@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { ROLES } from "../../config/roles"
 
-const USER_REGEX = /^[A-z]{3,20}$/
+const USER_REGEX = /^[A-z0-9]{3,20}$/
 const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
 
 const EditUserForm = ({ user }) => {
@@ -105,7 +105,7 @@ const EditUserForm = ({ user }) => {
         <div className="form_wrapper">
             <p className={errClass}>{errContent}</p>
 
-            <form className="form" onSubmit={e => e.preventDefault()}>
+            <form className="form" onSubmit={e => e.preventDefault()} autocomplete="off">
                 
                 <div className="form__title-row">
                 <h2>Kullanıcı Düzenle</h2>                   
@@ -131,7 +131,7 @@ const EditUserForm = ({ user }) => {
                     
                 </div>
                 <label className="form__label" htmlFor="username">
-                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(sayı içermemeli, 3 - 20 arası harften oluşmalı)</span></label>
+                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#5D9CEC"}}>(3 - 20 arası harf veya sayı)</span></label>
                 <input
                     className={`form__input ${validUserClass}`}
                     id="username"
@@ -143,7 +143,7 @@ const EditUserForm = ({ user }) => {
                 />
 
                 <label className="form__label" htmlFor="password">
-                    <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(şifreyi değiştirmek istemiyorsanız boş burakın)</span></label>
+                    <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#5D9CEC"}}>(şifreyi değiştirmek istemiyorsanız boş burakın)</span></label>
                 <input
                     className={`form__input ${validPwdClass}`}
                     id="password"

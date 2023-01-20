@@ -6,7 +6,9 @@ const User = require('../models/User')
 // @access Private
 const getAllNotes = async (req, res) => {
     // Get all notes from MongoDB
-    const notes = await Note.find({ cikisTarihi: { $exists: false} }).sort({createdAt: 0}).lean()
+
+    const sort = [['_id', -1]]
+    const notes = await Note.find({ cikisTarihi: { $exists: false} }).sort(sort).lean()
     
     // If no notes 
     if (!notes?.length) {

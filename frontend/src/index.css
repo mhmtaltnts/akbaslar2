@@ -523,6 +523,7 @@ tbody{
 }
 
 .form__persist {
+  margin-top: 15px;
   display: flex;
   align-items: center;
   width: 100%;

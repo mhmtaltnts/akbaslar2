@@ -64,7 +64,8 @@ const NewNoteForm = () => {
                      <div className="form__action-buttons">
                         <button
                             className="form__button icon-button success__button"
-                            title="Save"
+                            title="Kaydet"
+                            onClick={onSaveNoteClicked}
                             disabled={!canSave}
                         >
                             <FontAwesomeIcon icon={faSave} />

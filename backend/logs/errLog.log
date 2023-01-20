@@ -84,3 +84,6 @@
 20230109	21:50:36	a787e771-973c-4390-b960-7b071c6363d2	ReferenceError: Cannot access 'notes' before initialization	GET	/notes	http://localhost:3000
 20230113	23:14:00	597babcc-021b-44c5-8c9d-8eec6812f7c0	TypeError: Cannot read properties of undefined (reading 'get')	GET	/rapor/?page=1	http://localhost:3000
 20230113	23:14:53	c41842f2-cf07-4c70-aeec-f5022495e7f1	TypeError: Cannot read properties of undefined (reading 'get')	GET	/rapor/?page=1	http://localhost:3000
+20230120	00:52:06	dc849936-0dd6-44ae-ab9b-30ef379b383a	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com
+20230120	00:52:08	2ad38807-36f2-489b-9722-7fdab5fcb476	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com
+20230120	00:55:58	a650ab9e-c2b7-477c-8114-efc1a24867b4	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com

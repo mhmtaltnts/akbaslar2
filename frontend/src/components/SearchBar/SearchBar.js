@@ -13,7 +13,7 @@ const SearchBar = ({setSearch}) => {
                     placeholder='Dorse Ara...'
                     onChange={(e) => setSearch(e.target.value)}
                 />
-                <button className={classes.search__button}>
+                <button className={classes.search__button} disabled>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </form>

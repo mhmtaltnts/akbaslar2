@@ -5,11 +5,11 @@ import {
 import { apiSlice } from "../../app/api/apiSlice"
 
 const notesAdapter = createEntityAdapter({
-    sortComparer: (a, b) => (a.createdAt === b.createdAt) ? 0 : a.createdAt ? -1 : 1
+    sortComparer: (a, b) => (a.createdAt === b.createdAt) ? 0 : a.createdAt ? 1 : -1
 })
 
 const raporAdapter = createEntityAdapter({
-    sortComparer: (a, b) => (a.createdAt === b.createdAt) ? 0 : a.createdAt ? -1 : 1
+    sortComparer: (a, b) => (a.createdAt === b.createdAt) ? 0 : a.createdAt ? 1 : -1
 })
 
 const initialState = notesAdapter.getInitialState()

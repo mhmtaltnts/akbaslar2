@@ -67,7 +67,7 @@ const Login = () => {
             <header className='dash-header'>
                 <div className='dash-header__container'>
                 <div className='logo__text' onClick={onGoHomeClicked}>
-                    <h1 className="dash-header__title" style={{fontFamily: ['Allura', "cursive"], fontSize: "53px"}}>Gebze Konak Tır Parkı</h1>
+                    <h1 className="dash-header__title" style={{fontFamily: ['Allura', "cursive"], fontSize: "33px"}}>Gebze Konak Tır Parkı</h1>
                 </div>
                 </div>
             </header>
@@ -75,7 +75,7 @@ const Login = () => {
                 <div className='wrapper'>
                     <div className='inner_wrapper'> 
                     <p ref={errRef} className={errClass} aria-live="assertive">{errMsg}</p>
-                    <h1 style={{marginTop:"25px"}}>Sisteme Giriş</h1>
+                    <h1 style={{marginTop:"15px", textAlign:"center"}}>Sisteme Giriş</h1>
 
                     <form className="form__login" onSubmit={handleSubmit}>                                        
                         <input

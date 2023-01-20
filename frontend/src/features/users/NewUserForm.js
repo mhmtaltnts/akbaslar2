@@ -6,8 +6,8 @@ import { faSave } from "@fortawesome/free-solid-svg-icons"
 import { ROLES } from "../../config/roles"
 import useTitle from "../../hooks/useTitle"
 
-const USER_REGEX = /^[A-z]{3,20}$/
-const PWD_REGEX = /^[A-z0-9]{4,12}$/
+const USER_REGEX = /^[A-z0-9]{3,20}$/
+const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
 
 const NewUserForm = () => {
     useTitle('Yeni Kullanıcı')
@@ -25,7 +25,7 @@ const NewUserForm = () => {
     const [validUsername, setValidUsername] = useState(false)
     const [password, setPassword] = useState('')
     const [validPassword, setValidPassword] = useState(false)
-    const [roles, setRoles] = useState(["Employee"])
+    const [roles, setRoles] = useState(["Çalışan"])
 
     useEffect(() => {
         setValidUsername(USER_REGEX.test(username))
@@ -83,9 +83,9 @@ const NewUserForm = () => {
     const content = (
         <div className="form_wrapper">
             <p className={errClass}>{error?.data?.message}</p>
-            <form className="form" onSubmit={onSaveUserClicked}>
+            <form className="form" onSubmit={onSaveUserClicked} autocomplete="off">
                 <div className="form__title-row">
-                <h2>Yeni Kullanıcı</h2>
+                    <h2>Yeni Kullanıcı</h2>
                     <div className="form__action-buttons-wrapper">
                         <div className="form__action-buttons">
                             <button
@@ -100,7 +100,7 @@ const NewUserForm = () => {
                
                 </div>
                 <label className="form__label" htmlFor="username">
-                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#87CEFA"}}>(sayı içermemeli, 3 - 20 arası harften oluşmalı)</span></label>
+                    <span style={{fontStyle: "italic", color:"#5D9CEC"}}>(3 - 20 arası harf veya sayı olabilir)</span></label>
                 <input
                     className={`form__input ${validUserClass}`}
                     id="username"
@@ -108,18 +108,21 @@ const NewUserForm = () => {
                     type="text"
                     autoComplete="off"
                     value={username}
+                    placeholder="Kullanıcı Adı"
                     onChange={onUsernameChanged}
                 />
 
                 <label className="form__label" htmlFor="password">
-                     <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#87CEFA"}} >(!@#$% gibi 4-12 arası karakter)</span>
+                     <span style={{fontStyle: "italic", color:"#5D9CEC"}} >(4-12 arası karakter, !@#$% kullanılabilir )</span>
                 </label>
                 <input
                     className={`form__input ${validPwdClass}`}
                     id="password"
                     name="password"
                     type="password"
+                    autoComplete="off"
                     value={password}
+                    placeholder="Şifre"
                     onChange={onPasswordChanged}
                 />
     
@@ -137,7 +140,7 @@ const NewUserForm = () => {
                 >
                     {options}
                 </select>
-                </div>
+            </div>
             </form>
         </div>
     )
