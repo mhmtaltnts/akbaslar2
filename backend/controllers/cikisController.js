@@ -18,7 +18,7 @@ const cikisNote = async (req, res) => {
     const note = await Note.findById(id).exec()
 
     if (!note) {
-        return res.status(400).json({ message: 'Bulunamadı' })
+        return res.status(400).json({ message: 'Kayıt Bulunamadı' })
     }
 
 

@@ -49,6 +49,12 @@ const CikisForm = ({ note }) => {
 
     const errContent = (error?.data?.message) ?? ''
     
+    let options = {
+        dateStyle: "short",
+        timeStyle: "short",
+    }
+    const created = new Date(note.createdAt).toLocaleString('tr-TR', options)
+    
     const content = (
         
         <div className="form_wrapper">
@@ -80,8 +86,44 @@ const CikisForm = ({ note }) => {
                     type="text"
                     autoComplete="off"
                     value={goturen}
-                    placeholder="Götüren Çekici Plakası"
+                    placeholder="Götüren Çekici Plakası Giriniz"
                     onChange={onGoturenChanged}
+                />
+                <label htmlFor="dorse">Dorse Plakası</label>
+                <input
+                    className={`form__input`}
+                    id="dorse"
+                    name="dorse"
+                    type="text"
+                    value={note.dorse}
+                    disabled
+                />
+                <label htmlFor="getiren">Getiren Çekici</label>
+                <input
+                    className={`form__input`}
+                    id="getiren"
+                    name="getiren"
+                    type="text"
+                    value={note.getiren}
+                    disabled
+                />
+                <label htmlFor="firma">Firma</label>
+                <input
+                    className={`form__input`}
+                    id="firma"
+                    name="firma"
+                    type="text"
+                    value={note.firma}
+                    disabled
+                />
+                <label htmlFor="firma">Giriş Tarihi</label>
+                <input
+                    className={`form__input`}
+                    id="gelisTarihi"
+                    name="gelisTarihi"
+                    type="text"
+                    value={created}
+                    disabled
                 />
                 
             </form>
