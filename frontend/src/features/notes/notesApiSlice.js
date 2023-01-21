@@ -41,6 +41,7 @@ export const notesApiSlice = apiSlice.injectEndpoints({
                 } else return [{ type: 'Note', id: 'LIST' }]
             }
         }),
+        
         getRapor: builder.query({
             query: (page=1) => ({
                 url: `/rapor?page=${page}`,
@@ -67,7 +68,8 @@ export const notesApiSlice = apiSlice.injectEndpoints({
                         ...result.ids.map(id => ({ type: 'Note', id }))
                     ]
                 } else return [{ type: 'Note', id: 'LIST' }]
-            }
+            },
+
             
         }),
         addNewNote: builder.mutation({
@@ -91,9 +93,11 @@ export const notesApiSlice = apiSlice.injectEndpoints({
                 }
             }),
             invalidatesTags: (result, error, arg) => [
+                { type: 'Note', id: "LIST" },
                 { type: 'Note', id: arg.id }
             ]
         }),
+        
         cikis: builder.mutation({
             query: initialNote => ({
                 url: '/cikis',
@@ -138,6 +142,7 @@ export const {
     useGetRaporQuery,
     useAddNewNoteMutation,
     useUpdateNoteMutation,
+    useUpdateRaporNoteMutation,
     useCikisMutation,
     useGumrukMutation,
     useDeleteNoteMutation,

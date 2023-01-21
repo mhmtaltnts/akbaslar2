@@ -44,7 +44,7 @@ const createNewNote = async (req, res) => {
 // @route PATCH /notes
 // @access Private
 const updateNote = async (req, res) => {
-    const { id, user, getiren, dorse, firma, mal, gumruk } = req.body
+    const { id, user, getiren, dorse, firma, mal, gumruk} = req.body
     
     // Confirm data
     /* if (!id || !user || !getiren || !dorse || !firma || !mal) {
@@ -58,13 +58,13 @@ const updateNote = async (req, res) => {
         return res.status(400).json({ message: 'Kayıt bulunamadı' })
     }
 
-
     note.guncelleyen = user
     note.getiren = getiren
     note.dorse = dorse
     note.firma = firma
     note.mal = mal
     note.gumruk = gumruk
+    
 
     const updatedNote = await note.save()
 

@@ -49,7 +49,7 @@ const NotesList = () => {
         }
                
 
-        const tableContent = ids?.length && filteredIds.sort((a, b) => {return 0}).map(noteId => <Note key={noteId} noteId={noteId} />)
+        const tableContent = ids?.length && filteredIds.map(noteId => <Note key={noteId} noteId={noteId} />)
     
         content = (<>
         <div className="searchAndCount">

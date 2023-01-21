@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { useUpdateNoteMutation, useDeleteNoteMutation } from "./notesApiSlice"
+import { useUpdateRaporNoteMutation} from "./notesApiSlice"
 import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
@@ -14,7 +14,7 @@ const EditNoteForm = ({ note }) => {
         isSuccess,
         isError,
         error
-    }] = useUpdateNoteMutation()
+    }] = useUpdateRaporNoteMutation()
 
     const [deleteNote, {
         isSuccess: isDelSuccess,
@@ -29,7 +29,7 @@ const EditNoteForm = ({ note }) => {
     const [firma, setFirma] = useState(note.firma)
     const [mal, setMal] = useState(note.mal)
     const [gumruk, setGumruk] = useState(note.gumruk)
-    
+    const [goturen, setGoturen] = useState(note.goturen)
 
     useEffect(() => {
 
@@ -39,6 +39,7 @@ const EditNoteForm = ({ note }) => {
             setFirma('')
             setMal('')
             setGumruk('')
+            setGoturen('')
             navigate('/dash/notes')
         }
 
@@ -49,13 +50,13 @@ const EditNoteForm = ({ note }) => {
     const onFirmaChanged = e => setFirma(e.target.value)
     const onMalChanged = e => setMal(e.target.value)
     const onGumrukChanged = e => setGumruk(e.target.value)
-    
+    const onGoturenChanged = e => setGoturen(e.target.value)
 
     const canSave = [getiren, dorse].every(Boolean) && !isLoading
 
     const onSaveNoteClicked = async (e) => {
         if (canSave) {
-            await updateNote({ id: note.id, user: username, getiren, dorse, firma, mal, gumruk})
+            await updateNote({ id: note.id, user: username, getiren, dorse, firma, mal, gumruk, goturen })
         }
     }
 
@@ -166,7 +167,18 @@ const EditNoteForm = ({ note }) => {
                     value={gumruk}
                     onChange={onGumrukChanged}
                 />
-                                                
+                <label className="form__label" htmlFor="goturen">
+                    Götüren Çekici Plakası:</label>
+                <input
+                    className={`form__input form__input--text`}
+                    id="goturen"
+                    name="goturen"
+                    type= "text"
+                    autoComplete="off"
+                    value={goturen}
+                    onChange={onGoturenChanged}
+                />
+                                
             </form> 
                       
         </div>
