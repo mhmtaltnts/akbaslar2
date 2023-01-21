@@ -45,10 +45,11 @@ const NotesList = () => {
             filteredIds = [...ids]
         } else{
             filteredIds = ids.filter(noteId => { return entities[noteId].dorse.toLowerCase().includes(search.toLowerCase())})
+
         }
                
 
-        const tableContent = ids?.length && filteredIds.map(noteId => <Note key={noteId} noteId={noteId} />)
+        const tableContent = ids?.length && filteredIds.sort((a, b) => {return 0}).map(noteId => <Note key={noteId} noteId={noteId} />)
     
         content = (<>
         <div className="searchAndCount">
@@ -59,16 +60,16 @@ const NotesList = () => {
             <table className={`table table--notes ${calClass}`}>
                 <thead className="table__thead">
                     <tr>
-                        <th scope="col" className="table__th mobile" >Getiren Çekici</th>
-                        <th scope="col" className="table__th">Dorse Plakası</th>
-                        <th scope="col" className="table__th tablet">Firma</th>
-                        <th scope="col" className="table__th tablet">Malın Cinsi</th>
-                        <th scope="col" className="table__th">Gümrük Bilgi</th>
-                        <th scope="col" className="table__th tablet">Giriş Tarihi</th>
-                        <th scope="col" className="table__th tablet">Giriş Yapan</th>
-                        <th scope="col" className="table__th">   </th>  
-                        <th scope="col" className="table__th">   </th>
-                        {(isAdmin || isManager) && <th scope="col" className="table__th">  </th>}
+                        <th scope="col" className="mobile" >Getiren Çekici</th>
+                        <th scope="col" >Dorse Plakası</th>
+                        <th scope="col" className="tablet">Firma</th>
+                        <th scope="col" className="tablet">Malın Cinsi</th>
+                        <th scope="col" >Gümrük Bilgi</th>
+                        <th scope="col" className="tablet">Giriş Tarihi</th>
+                        <th scope="col" className="tablet">Giriş Yapan</th>
+                        <th scope="col" className="">   </th>  
+                        <th scope="col" className="">   </th>
+                        {(isAdmin || isManager) && <th scope="col" >  </th>}
                     </tr>
                 </thead>
                 <tbody>

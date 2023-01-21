@@ -15,16 +15,14 @@ const Welcome = () => {
 
             <h1>Hoşgeldiniz!</h1>
 
-            <p><Link to="/dash/notes">Tüm Kayıtlar</Link></p>
 
-            <p><Link to="/dash/notes/new">Yeni Kayıt Ekle</Link></p>
-
-            <p><Link to="/dash/rapor">Rapor</Link></p>
-            
-
-            {(isManager || isAdmin) && <p><Link to="/dash/users">Kullanıcılar ve Ayarlar</Link></p>}
+            <p><Link to="/dash/notes/new">Yeni Kayıt Ekle</Link></p>            
 
             {(isManager || isAdmin) && <p><Link to="/dash/users/new">Yeni Kullanıcı Ekle</Link></p>}
+
+            {(isManager || isAdmin) && <p><Link to="/dash/users">Kullanıcılar ve Ayarlar</Link></p>}
+            <p><Link to="/dash/notes">Tüm Kayıtlar</Link></p>
+            <p><Link to="/dash/rapor">Rapor</Link></p>
 
         </section>
     )

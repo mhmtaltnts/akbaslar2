@@ -37,7 +37,7 @@ const Note = ({ noteId }) => {
                 <td className="table__cell tablet">{created}</td>
                 <td className="table__cell tablet">{note.girisYapan}</td>
                 
-                <td className="table__cell">
+                <td className="table__cell table-th__button">
                     <button
                         className="button__success"
                         onClick={handleGumruk}
@@ -46,16 +46,16 @@ const Note = ({ noteId }) => {
                     </button>
                 </td>
                 
-                <td className="table__cell">
+                <td className="table__cell table-th__button">
                     <button
                         className="button__danger"
                         onClick={handleCikis}
                     >
-                      Çıkış Yap
+                      ÇıkışYap
                     </button>
                 </td>
 
-                {(isAdmin || isManager) && <td className="table__cell">
+                {(isAdmin || isManager) && <td className="table__cell table-th__button">
                     <button
                         className="button__warning"
                         onClick={handleEdit}

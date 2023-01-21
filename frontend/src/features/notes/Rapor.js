@@ -37,7 +37,7 @@ const Rapor = () => {
     if (isSuccess) {
         let filteredIds
         const { ids, entities } = data.notes
-        //console.log(notes)
+        console.log(ids)
         let count = data.pagination.count
         let pageCount= data?.pagination.pageCount
         //let count = 10

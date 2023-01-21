@@ -33,18 +33,24 @@ const UsersList = () => {
         const tableContent = ids?.length && ids.map(userId => <User key={userId} userId={userId} />)
 
         content = (
-            <table className="table table_users">
-                <thead className="table__thead">
-                    <tr>
-                        <th scope="col" className="table__th user__username">Kullanıcı Adı</th>
-                        <th scope="col" className="table__th user__roles">Görevi</th>
-                        <th scope="col" className="table__th user__edit">Düzenle</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {tableContent}
-                </tbody>
-            </table>
+            <div className="user-table">
+                <h1 style={{textAlign: "center", padding: "15px"}}>Kullanıcılar Listesi</h1>
+
+                <table className="table table_users">
+                    <thead className="table__thead">
+                        <tr>
+                            <th scope="col" className="table__th user__username">Kullanıcı Adı</th>
+                            <th scope="col" className="table__th user__roles">Görevi</th>
+                            <th scope="col" className="table__th user__edit">Düzenle</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {tableContent}
+                    </tbody>
+                </table>
+
+            </div>
+            
         )
     }
 
