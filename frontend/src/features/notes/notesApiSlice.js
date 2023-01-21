@@ -103,6 +103,7 @@ export const notesApiSlice = apiSlice.injectEndpoints({
                 }
             }),
             invalidatesTags: (result, error, arg) => [
+                { type: 'Note', id: "LIST" },
                 { type: 'Note', id: arg.id }
             ]
         }),
@@ -125,6 +126,7 @@ export const notesApiSlice = apiSlice.injectEndpoints({
                 body: { id }
             }),
             invalidatesTags: (result, error, arg) => [
+                { type: 'Note', id: "LIST" },
                 { type: 'Note', id: arg.id }
             ]
         }),

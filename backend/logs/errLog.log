@@ -87,3 +87,8 @@
 20230120	00:52:06	dc849936-0dd6-44ae-ab9b-30ef379b383a	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com
 20230120	00:52:08	2ad38807-36f2-489b-9722-7fdab5fcb476	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com
 20230120	00:55:58	a650ab9e-c2b7-477c-8114-efc1a24867b4	Error: Not allowed by CORS	OPTIONS	/auth	https://akbaslartirparki.com
+20230121	18:29:20	2510aef3-c600-4567-ac8a-2051b93d709e	TypeError: Assignment to constant variable.	PATCH	/cikis	http://localhost:3000
+20230121	18:46:27	9ead26fe-8bd3-4ede-b170-6093d177869b	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
+20230121	18:47:18	2af503f6-5b5d-45c0-b0d4-02566588edfd	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
+20230121	18:50:32	f1f21909-e57e-4ec1-b213-ceca1e6b1d1e	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
+20230121	18:51:30	53c807e5-59b8-41c5-b618-668918311705	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
