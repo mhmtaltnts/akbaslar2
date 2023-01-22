@@ -55,7 +55,7 @@ const Note = ({ noteId }) => {
                     </button>
                 </td>
 
-                {(isAdmin || isManager) && <td className="table__cell table-th__button">
+                {(isAdmin || isManager) && <td className="table__cell table-th__button mobile">
                     <button
                         className="button__warning"
                         onClick={handleEdit}

@@ -85,7 +85,6 @@ select {
 
 a {
   text-decoration: none;
-  font-size: 1.5rem;
   color: var(--LINK-COLOR);
   padding: 10px;
 }
@@ -652,8 +651,34 @@ option {
 }
 
 @media screen and (0 < width <= 640px){
-
-  a{
+  .button__success{
+    font-size: 0.9rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .button__danger{
+    font-size: 0.9rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+  .button__warning{
+    font-size: 0.9rem;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
+    padding-bottom: 1px;
+  }
+ th{
+  font-size: 1rem;
+ }
+ .table__cell{
+  font-size: 0.9rem;
+ }
+  .welcome-link{
     font-size: 1rem;
   }
   .table_users {  
@@ -693,7 +718,12 @@ option {
     justify-content: space-between;
     align-items: center;
   }
-  
+  .footer_wrapper{
+    font-size: 0.9rem;
+  }
+  .welcome-link{
+    font-size: 1.5rem;
+  }
   .form{
     max-width: 100%;
   }
@@ -714,7 +744,7 @@ option {
     display: none;
   }
   .yonetici {
-    grid-template-columns: repeat(2, auto) repeat(3, auto) ;
+    grid-template-columns: repeat(2, auto) repeat(2, auto) ;
   }
   .calisan {
     grid-template-columns: repeat(2, auto) repeat(2, auto) ;
@@ -749,12 +779,6 @@ option {
     font-size: 1.7rem;
   }
 
-  
-  .table__th,
-  .table__cell {
-  font-size: 0.7rem;
-  padding: 0px;
-}
 .dash-header__nav {
   padding: 5px;
 }

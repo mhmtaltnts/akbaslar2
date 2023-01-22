@@ -6,8 +6,8 @@ import { faSave } from "@fortawesome/free-solid-svg-icons"
 import { ROLES } from "../../config/roles"
 import useTitle from "../../hooks/useTitle"
 
-const USER_REGEX = /^[A-z0-9]{3,20}$/
-const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
+/* const USER_REGEX = /^[A-z0-9]{3,20}$/
+const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/ */
 
 const NewUserForm = () => {
     useTitle('Yeni Kullanıcı')
@@ -22,18 +22,18 @@ const NewUserForm = () => {
     const navigate = useNavigate()
 
     const [username, setUsername] = useState('')
-    const [validUsername, setValidUsername] = useState(false)
+    //const [validUsername, setValidUsername] = useState(false)
     const [password, setPassword] = useState('')
-    const [validPassword, setValidPassword] = useState(false)
+    //const [validPassword, setValidPassword] = useState(false)
     const [roles, setRoles] = useState(["Çalışan"])
 
-    useEffect(() => {
+    /* useEffect(() => {
         setValidUsername(USER_REGEX.test(username))
     }, [username])
 
     useEffect(() => {
         setValidPassword(PWD_REGEX.test(password))
-    }, [password])
+    }, [password]) */
 
     useEffect(() => {
         if (isSuccess) {
@@ -55,7 +55,7 @@ const NewUserForm = () => {
         setRoles(values)
     }
 
-    const canSave = [roles.length, validUsername, validPassword].every(Boolean) && !isLoading
+    const canSave = !isLoading
 
     const onSaveUserClicked = async (e) => {
         e.preventDefault()
@@ -75,15 +75,15 @@ const NewUserForm = () => {
     })
 
     const errClass = isError ? "errmsg" : "offscreen"
-    const validUserClass = !validUsername ? 'form__input--incomplete' : ''
-    const validPwdClass = !validPassword ? 'form__input--incomplete' : ''
+    /* const validUserClass = !validUsername ? 'form__input--incomplete' : ''
+    const validPwdClass = !validPassword ? 'form__input--incomplete' : '' */
     const validRolesClass = !Boolean(roles.length) ? 'form__input--incomplete' : ''
 
 
     const content = (
         <div className="form_wrapper">
             <p className={errClass}>{error?.data?.message}</p>
-            <form className="form" onSubmit={onSaveUserClicked} autocomplete="off">
+            <form className="form" onSubmit={onSaveUserClicked} autoComplete="off">
                 <div className="form__title-row">
                     <h2>Yeni Kullanıcı</h2>
                     <div className="form__action-buttons-wrapper">
@@ -99,10 +99,9 @@ const NewUserForm = () => {
                     </div> 
                
                 </div>
-                <label className="form__label" htmlFor="username">
-                    <span style={{fontStyle: "italic", color:"#5D9CEC"}}>(3 - 20 arası harf veya sayı olabilir)</span></label>
+                
                 <input
-                    className={`form__input ${validUserClass}`}
+                    className="form__input"
                     id="username"
                     name="username"
                     type="text"
@@ -112,11 +111,8 @@ const NewUserForm = () => {
                     onChange={onUsernameChanged}
                 />
 
-                <label className="form__label" htmlFor="password">
-                     <span style={{fontStyle: "italic", color:"#5D9CEC"}} >(4-12 arası karakter, !@#$% kullanılabilir )</span>
-                </label>
                 <input
-                    className={`form__input ${validPwdClass}`}
+                    className="form__input"
                     id="password"
                     name="password"
                     type="password"

@@ -5,8 +5,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSave, faTrashCan } from "@fortawesome/free-solid-svg-icons"
 import { ROLES } from "../../config/roles"
 
-const USER_REGEX = /^[A-z0-9]{3,20}$/
-const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/
+/* const USER_REGEX = /^[A-z0-9]{3,20}$/
+const PWD_REGEX = /^[A-z0-9!@#$%]{4,12}$/ */
 
 const EditUserForm = ({ user }) => {
 
@@ -26,19 +26,19 @@ const EditUserForm = ({ user }) => {
     const navigate = useNavigate()
 
     const [username, setUsername] = useState(user.username)
-    const [validUsername, setValidUsername] = useState(false)
+    //const [validUsername, setValidUsername] = useState(false)
     const [password, setPassword] = useState('')
-    const [validPassword, setValidPassword] = useState(false)
+    //const [validPassword, setValidPassword] = useState(false)
     const [roles, setRoles] = useState(user.roles)
     const [active, setActive] = useState(user.active)
 
-    useEffect(() => {
+    /* useEffect(() => {
         setValidUsername(USER_REGEX.test(username))
     }, [username])
 
     useEffect(() => {
         setValidPassword(PWD_REGEX.test(password))
-    }, [password])
+    }, [password]) */
 
     useEffect(() => {
         console.log(isSuccess)
@@ -88,14 +88,14 @@ const EditUserForm = ({ user }) => {
 
     let canSave
     if (password) {
-        canSave = [roles.length, validUsername, validPassword].every(Boolean) && !isLoading
+        canSave = [roles.length].every(Boolean) && !isLoading
     } else {
-        canSave = [roles.length, validUsername].every(Boolean) && !isLoading
+        canSave = [roles.length].every(Boolean) && !isLoading
     }
 
     const errClass = (isError || isDelError) ? "errmsg" : "offscreen"
-    const validUserClass = !validUsername ? 'form__input--incomplete' : ''
-    const validPwdClass = password && !validPassword ? 'form__input--incomplete' : ''
+    //const validUserClass = !validUsername ? 'form__input--incomplete' : ''
+    //const validPwdClass = password && !validPassword ? 'form__input--incomplete' : ''
     const validRolesClass = !Boolean(roles.length) ? 'form__input--incomplete' : ''
 
     const errContent = (error?.data?.message || delerror?.data?.message) ?? ''
@@ -131,9 +131,10 @@ const EditUserForm = ({ user }) => {
                     
                 </div>
                 <label className="form__label" htmlFor="username">
-                    <span className="nowrap">Kullanıcı Adı</span><span style={{fontStyle: "italic", color:"#5D9CEC"}}>(3 - 20 arası harf veya sayı)</span></label>
+                    <span className="nowrap">Kullanıcı Adı</span>
+                </label>
                 <input
-                    className={`form__input ${validUserClass}`}
+                    className="form__input"
                     id="username"
                     name="username"
                     type="text"
@@ -143,9 +144,10 @@ const EditUserForm = ({ user }) => {
                 />
 
                 <label className="form__label" htmlFor="password">
-                    <span className="nowrap">Şifre</span><span style={{fontStyle: "italic", color:"#5D9CEC"}}>(şifreyi değiştirmek istemiyorsanız boş burakın)</span></label>
+                    <span className="nowrap">Şifre</span>
+                </label>
                 <input
-                    className={`form__input ${validPwdClass}`}
+                    className="form__input" 
                     id="password"
                     name="password"
                     type="password"

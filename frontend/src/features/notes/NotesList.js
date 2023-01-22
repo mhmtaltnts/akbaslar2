@@ -69,7 +69,7 @@ const NotesList = () => {
                         <th scope="col" className="tablet">Giriş Yapan</th>
                         <th scope="col" className="">   </th>  
                         <th scope="col" className="">   </th>
-                        {(isAdmin || isManager) && <th scope="col" >  </th>}
+                        {(isAdmin || isManager) && <th scope="col" className="mobile">  </th>}
                     </tr>
                 </thead>
                 <tbody>
