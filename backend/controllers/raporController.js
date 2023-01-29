@@ -7,19 +7,19 @@ const rapor = async (req, res) => {
 
     const page = req.query.page || 1
 
-    const query = {}
-    const sort = [['_id', -1]]
+    const query = { cikisTarihi: { $exists: true} }
+    const sort = {cikisTarihi: -1}
 
     try {
         const skip = (page-1) * NOTES_PER_PAGE
         const count = await Note.estimatedDocumentCount(query)
-        const notes = await Note.find(query)
-            .sort(sort)
+        const notes = await Note.find(query)            
             .skip(skip)
             .limit(NOTES_PER_PAGE)
+            .sort(sort)
             
             
-        const pageCount = count <= 100 ? 1 : Math.ceil(count / NOTES_PER_PAGE)
+        const pageCount = count <= NOTES_PER_PAGE ? 1 : Math.ceil(count / NOTES_PER_PAGE)
         return res.json({
             pagination: {
                 count,
@@ -43,7 +43,26 @@ const rapor = async (req, res) => {
     
 }
 
+const getNote = async (req, res) => {
+    const { id } = req.params
+
+    // Confirm data
+    if (!id) {
+        return res.status(400).json({ message: 'Kayıt ID gerekli' })
+    }
+
+    // Confirm note exists to delete 
+    const note = await Note.findById(id).exec()
+
+    if (!note) {
+        return res.status(400).json({ message: 'Kayıt bulunamadı' })
+    }
+
+    res.json(note)
+}
+
 
 module.exports = {
-    rapor    
+    rapor,
+    getNote    
 }

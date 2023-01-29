@@ -1,7 +1,11 @@
-import { useGetUsersQuery } from "./usersApiSlice"
-import User from './User'
+import { useGetUsersQuery } from "../../app/api/usersApiSlice"
 import useTitle from "../../hooks/useTitle"
 import PulseLoader from 'react-spinners/PulseLoader'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPenToSquare } from "@fortawesome/free-solid-svg-icons"
+import { useNavigate } from 'react-router-dom'
+
+
 
 const UsersList = () => {
     useTitle('Kullanıcı Listesi')
@@ -33,8 +37,9 @@ const UsersList = () => {
         const tableContent = ids?.length && ids.map(userId => <User key={userId} userId={userId} />)
 
         content = (
+            <div className='wrapper'>
             <div className="user-table">
-                <h1 style={{textAlign: "center", padding: "15px"}}>Kullanıcılar Listesi</h1>
+                <h1>Kullanıcılar Listesi</h1>
 
                 <table className="table table_users">
                     <thead className="table__thead">
@@ -50,10 +55,54 @@ const UsersList = () => {
                 </table>
 
             </div>
+            </div>
             
         )
     }
 
     return content
 }
+
+
+
+
+const User = ({ userId }) => {
+
+    const { user } = useGetUsersQuery("usersList", {
+        selectFromResult: ({ data }) => ({
+            user: data?.entities[userId]
+        }),
+    })
+
+    const navigate = useNavigate()
+
+    if (user) {
+        const handleEdit = () => navigate(`/dash/users/${userId}`)
+
+        const userRolesString = user.roles.toString().replaceAll(',', ', ')
+
+        const cellStatus = user.active ? '' : 'table__cell--inactive'
+
+        return (
+            <tr className="table__row user">
+                <td className={`table__cell ${cellStatus}`}>{user.fullName}</td>
+                <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
+                <td className={`table__cell ${cellStatus}`}>
+                    <button
+                        className="table__button"
+                        onClick={handleEdit}
+                    >
+                        <FontAwesomeIcon icon={faPenToSquare} />
+                    </button>
+                </td>
+            </tr>
+        )
+
+    } else return null
+}
+
+
+
+
+
 export default UsersList

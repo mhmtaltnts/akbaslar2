@@ -1,75 +1,85 @@
 import { Routes, Route } from 'react-router-dom'
-import Layout from './components/Layout'
-import Public from './components/Public'
-import Login from './features/auth/Login';
-import DashLayout from './components/DashLayout'
-import Welcome from './features/auth/Welcome'
+import PublicLayout from './routes/publicRoute/PublicLayout'
+import Public from './routes/publicRoute/Public'
+import Login from './routes/publicRoute/Login';
+import DashLayout from './routes/privateRoutes/DashLayout'
+import Welcome from './routes/privateRoutes/Welcome'
 import NotesList from './features/notes/NotesList'
 import UsersList from './features/users/UsersList'
 import EditUser from './features/users/EditUser'
-import NewUserForm from './features/users/NewUserForm'
+import NewUser from './features/users/NewUser'
 import EditNote from './features/notes/EditNote'
-import Cikis from './features/notes/Cikis'
-import Gumruk from './features/notes/Gumruk'
-import Rapor from './features/notes/Rapor'
+import NoteDetail from './features/rapor/NoteDetail';
+import Cikis from './features/cikis/Cikis'
+import Gumruk from './features/gumruk/Gumruk'
+import Rapor from './features/rapor/Rapor'
 import NewNote from './features/notes/NewNote'
 import Prefetch from './features/auth/Prefetch'
 import PersistLogin from './features/auth/PersistLogin'
 import RequireAuth from './features/auth/RequireAuth'
 import { ROLES } from './config/roles'
 import useTitle from './hooks/useTitle';
+import PublicNotesList from './routes/publicRoute/PublicNotesList';
+import { selectCurrentTheme } from "./app/appStore/themeSlice"
+import { useSelector } from 'react-redux'
 
 function App() {
   useTitle('Gebze Konak Parkı')
+  const dark = useSelector(selectCurrentTheme)
 
   return (
+    <div className={ dark ? `dark` : `light`}>
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<PublicLayout />}>
         {/* public routes */}
         <Route index element={<Public />} />
+        <Route path="araclar" element={<PublicNotesList />} />
         <Route path="login" element={<Login />} />
+      </Route>
 
         {/* Protected Routes */}
         <Route element={<PersistLogin />}>
           <Route element={<RequireAuth allowedRoles={[...Object.values(ROLES)]} />}>
+
             <Route element={<Prefetch />}>
               <Route path="dash" element={<DashLayout />}>
 
                 <Route index element={<Welcome />} />
+                
+                <Route path="notes">
+                    <Route index element={<NotesList />} />
+                    <Route path=":id" element={<EditNote />} />
+                    <Route path="new" element={<NewNote />} />
+                </Route>
+                
+                <Route path="gumruk">                 
+                  <Route path=":id" element={<Gumruk />} />
+                </Route>
 
                 <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin]} />}>
                   <Route path="users">
                     <Route index element={<UsersList />} />
                     <Route path=":id" element={<EditUser />} />
-                    <Route path="new" element={<NewUserForm />} />
+                    <Route path="new" element={<NewUser />} />
                   </Route>
                 </Route>
+                <Route element={<RequireAuth allowedRoles={[ROLES.Manager, ROLES.Admin, ROLES.Employee]} />}>
+                  
+                  <Route path="cikis">                 
+                    <Route path=":id" element={<Cikis />} />
+                  </Route>
 
-                <Route path="notes">
-                  <Route index element={<NotesList />} />
-                  <Route path=":id" element={<EditNote />} />
-                  <Route path="new" element={<NewNote />} />
+                  <Route path="rapor">                 
+                    <Route index element={<Rapor />} />
+                    <Route path=":id" element={<NoteDetail/>} />
+                  </Route>
                 </Route>
-
-                <Route path="cikis">                 
-                  <Route path=":id" element={<Cikis />} />
-                </Route>
-
-                <Route path="gumruk">                 
-                  <Route path=":id" element={<Gumruk />} />
-                </Route>
-
-                <Route path="rapor">                 
-                  <Route index element={<Rapor />} />
-                </Route>
-
               </Route>{/* End Dash */}
             </Route>
           </Route>
         </Route>{/* End Protected Routes */}
-
-      </Route>
     </Routes >
+    </div>
   );
 }
 

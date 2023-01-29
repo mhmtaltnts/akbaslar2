@@ -7,5 +7,9 @@ router.use(verifyJWT)
 
 router.route('/')
     .get(raporController.rapor)
+    
+router.route('/:id')
+    
+    .get(raporController.getNote)
 
 module.exports = router

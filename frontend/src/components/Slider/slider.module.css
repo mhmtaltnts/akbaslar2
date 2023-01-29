@@ -50,6 +50,7 @@
 }
 
 .public__title{
+    font-size: 6rem!important;
     width: fit-content;
     position: absolute;
     margin: auto;
@@ -62,7 +63,7 @@
 
   @media screen and (100px < width <= 640px){
     .public__title{
-        font-size: 1.5rem;
+        font-size: 1.5rem!important;
         width: fit-content;
         position: absolute;
         margin: auto;

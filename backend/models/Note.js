@@ -22,30 +22,38 @@ const noteSchema = new mongoose.Schema(
             type: String,
             
         },
-        gumrukGirisiYapan: {
-            type: String,
-            
-        },
-        gumrukGirisTarihi: {
-            type: Date,
-        },
-        cikisTarihi: {
-            type: Date,
-        },        
         goturen: {
             type: String,
         },
         girisYapan: {
             type: String,
         },
+                
+        gumrukGirisiYapan: {
+            type: String,
+            
+        },
+                
         cikisYapan: {
             type: String,
-        },
-        
+        },        
+                 
         guncelleyen: {
             type: String,
-            },
         },
+        girisTarihi:{
+            type: Date
+        },
+        gumrukGirisTarihi: {
+            type: Date,
+        },
+        cikisTarihi: {
+            type: Date,
+        },
+        degismeTarihi: {
+            type: Date,
+        },
+    },
     {
         timestamps: true
     }

@@ -30,7 +30,7 @@ const createNewNote = async (req, res) => {
     }
  */
     // Create and store the new user 
-    const note = await Note.create({ girisYapan: user, getiren, dorse, firma, mal })
+    const note = await Note.create({ girisYapan: user, getiren, dorse, firma, mal, girisTarihi: Date.now() })
 
     if (note) { // Created 
         return res.status(201).json({ message: 'Yeni kayıt oluşturuldu' })
@@ -59,6 +59,7 @@ const updateNote = async (req, res) => {
     }
 
     note.guncelleyen = user
+    note.degismeTarihi = Date.now()
     note.getiren = getiren
     note.dorse = dorse
     note.firma = firma

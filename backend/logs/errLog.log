@@ -92,3 +92,7 @@
 20230121	18:47:18	2af503f6-5b5d-45c0-b0d4-02566588edfd	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
 20230121	18:50:32	f1f21909-e57e-4ec1-b213-ceca1e6b1d1e	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
 20230121	18:51:30	53c807e5-59b8-41c5-b618-668918311705	TypeError: fromObj.toObject is not a function	PATCH	/cikis	http://localhost:3000
+20230125	20:47:26	3f8c3a79-940b-4083-bdda-da47db8d6bf3	CastError: Cast to ObjectId failed for value "undefined" (type string) at path "_id" for model "Note"	GET	/rapor/undefined	http://localhost:3000
+20230129	13:30:59	71242f37-58fd-4891-b488-4417f2b47d55	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230129	13:31:34	1fc765a9-9695-49ee-b87f-f1b90545fc24	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230129	13:51:48	459a3beb-a4b0-40cb-b032-0fd0f9d47f7c	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/	http://localhost:3000

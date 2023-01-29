@@ -21,7 +21,7 @@ const getAllUsers = async (req, res) => {
 // @route POST /users
 // @access Private
 const createNewUser = async (req, res) => {
-    const { username, password, roles } = req.body
+    const { fullName, username, password, roles } = req.body
 
     // Confirm data
     if (!username || !password) {
@@ -39,8 +39,8 @@ const createNewUser = async (req, res) => {
     const hashedPwd = await bcrypt.hash(password, 10) // salt rounds
 
     const userObject = (!Array.isArray(roles) || !roles.length)
-        ? { username, "password": hashedPwd }
-        : { username, "password": hashedPwd, roles }
+        ? { fullName, username, "password": hashedPwd }
+        : { fullName, username, "password": hashedPwd, roles }
 
     // Create and store new user 
     const user = await User.create(userObject)
@@ -56,7 +56,7 @@ const createNewUser = async (req, res) => {
 // @route PATCH /users
 // @access Private
 const updateUser = async (req, res) => {
-    const { id, username, roles, active, password } = req.body
+    const { id, fullName, username, roles, active, password } = req.body
 
     // Confirm data 
     if (!id || !username || !Array.isArray(roles) || !roles.length || typeof active !== 'boolean') {
@@ -78,6 +78,7 @@ const updateUser = async (req, res) => {
         return res.status(409).json({ message: 'Bu isim kullanılıyor, başka isim deneyin.' })
     }
 
+    user.fullName = fullName
     user.username = username
     user.roles = roles
     user.active = active
