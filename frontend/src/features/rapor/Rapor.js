@@ -1,6 +1,5 @@
 import {useState} from "react"
 import { useGetRaporQuery } from "../../app/api/notesApiSlice"
-import useAuth from "../../hooks/useAuth"
 import useTitle from "../../hooks/useTitle"
 import PulseLoader from 'react-spinners/PulseLoader'
 import SearchBar from "../../components/SearchBar/SearchBar"
@@ -128,7 +127,6 @@ const Rapor = () => {
 
 const RaporNote = ({ noteId, page }) => {
 
-    const { isManager, isAdmin} = useAuth()
 
     const { note   } = useGetRaporQuery(page, {
         selectFromResult: ({ data }) => ({

@@ -1,6 +1,5 @@
 import { useParams } from 'react-router-dom'
 import { useGetRaporQuery } from '../../app/api/notesApiSlice'
-import useAuth from '../../hooks/useAuth'
 import PulseLoader from 'react-spinners/PulseLoader'
 import useTitle from '../../hooks/useTitle'
 import { selectCurrentPage } from "../../app/appStore/pageSlice"
@@ -106,7 +105,7 @@ const EditNoteForm = ({ note }) => {
                 />
                 <label className="form__label" htmlFor="gumruk">
                     Gümrük Bilgi:</label>
-                <input
+                <textarea
                     className={`form__input form__input--text`}
                     id="gumruk"
                     name="gumruk"

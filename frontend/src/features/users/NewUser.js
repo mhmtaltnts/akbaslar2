@@ -112,6 +112,7 @@ const NewUser = () => {
                     value={fullName}
                     placeholder="Adı ve Soyadı"
                     onChange={onFullNameChanged}
+                    autoFocus
                 />
                 <input
                     className="form__input"

@@ -1,5 +1,5 @@
 import React from 'react'
-import { useNavigate, Link } from 'react-router-dom'
+import { useNavigate, Link, useLocation } from 'react-router-dom'
 import { setTheme } from '../../app/appStore/themeSlice'
 import { selectCurrentTheme } from "../../app/appStore/themeSlice"
 import { useDispatch, useSelector } from 'react-redux'
@@ -7,13 +7,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import {
     faRightToBracket,
-    faFilePen,
     faSun,
     faMoon,
 } from "@fortawesome/free-solid-svg-icons"
 
+const ARACLAR_REGEX = /^\/araclar?$/
 
 const PublicHeader = () => {
+    const { pathname } = useLocation()
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const dark = useSelector(selectCurrentTheme)
@@ -62,13 +63,13 @@ const PublicHeader = () => {
                                     </button>
                                     )
                         }
-                        <button
+                        {!ARACLAR_REGEX.test(pathname) && <button
                             className="icon-button"
                             title="Kayıtlar"
                             onClick={onNotesClicked}
                         >
-                            <FontAwesomeIcon icon={faFilePen} />
-                        </button>
+                            Misafir Araçlar
+                        </button>}
                         <button
                             className="icon-button"
                             title="Yeni Kayıt"

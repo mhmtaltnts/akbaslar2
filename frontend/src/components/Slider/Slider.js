@@ -5,7 +5,7 @@ import {
     faChevronRight
 } from "@fortawesome/free-solid-svg-icons"
 
-import classes from "./slider.module.css"
+import classes from "./slider.module.scss"
 
 
 

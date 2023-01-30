@@ -96,3 +96,21 @@
 20230129	13:30:59	71242f37-58fd-4891-b488-4417f2b47d55	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
 20230129	13:31:34	1fc765a9-9695-49ee-b87f-f1b90545fc24	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
 20230129	13:51:48	459a3beb-a4b0-40cb-b032-0fd0f9d47f7c	Too Many Requests: Too many login attempts from this IP, please try again after a 60 second pause	POST	/	http://localhost:3000
+20230130	22:23:19	ccba2885-4fcc-4342-94b6-b29726e0b9fc	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:24:32	b9922e99-b9e3-4670-85fc-c921af743397	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:26:15	a7b52b77-c1fc-4d4f-a7fd-9a9f69bf6476	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:26:29	89c68771-83ef-401b-b108-7139eecf0ae9	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:26:44	d61fd665-afc2-44e2-84ec-8b24e1d00835	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:26:52	378f0aba-6ed1-4d82-a450-fe4f38236d9e	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:27:00	f8663fda-d2f7-4c09-a6d4-b38eb7368907	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:30:41	3e7cd91a-ff07-4191-b741-b89a674f3d4f	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:30:47	be69d08f-e406-4738-a569-2f9688bfc494	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:30:54	c86cb245-5b62-4409-8d1e-4c145c1553f7	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:31:08	11995d61-d140-4eb6-9021-ed453cac66cf	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:31:15	b5413294-7652-4ada-a2f3-99608f598e9f	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:31:26	cc58b7e3-de55-469c-a500-8c1675f9b3c3	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:31:30	2c1fe6ef-d404-483a-81d1-83bcd03a279f	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:31:34	bcff25ea-04dc-41af-8c50-ba8a08e5d284	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:32:02	05a8a9f7-07c1-4238-b883-0457f4d35fe9	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:32:06	95ada151-af2d-42e6-be6e-b18186f8288d	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000
+20230130	22:32:13	bf449089-320d-42f4-b8a9-4d4e67640e43	ValidationError: User validation failed: fullName: Path `fullName` is required.	PATCH	/users	http://localhost:3000

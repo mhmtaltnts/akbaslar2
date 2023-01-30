@@ -117,7 +117,7 @@ const EditGumrukForm = ({ note }) => {
 
             <form className="form" onSubmit={e => e.preventDefault()}>
                  <label htmlFor="gumruk">Gümrük Kaydı</label>               
-                <input
+                <textarea
                     className={`form__input ${validGumrukClass}`}
                     id="gumruk"
                     name="gumruk"

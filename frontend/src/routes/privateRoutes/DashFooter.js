@@ -58,7 +58,7 @@ const DashFooter = () => {
 
     const content = (
         <footer className="footer">
-            <div className="footer-wrapper">
+            <div className="footer-wrapper dash">
                 <div className='footer_left'>
                     {goHomeButton}
                 </div>

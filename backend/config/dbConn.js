@@ -8,9 +8,9 @@ const connectDB = async () => {
     }
 }
 
-/* const connectDB = async () => {
+/*const connectDB = async () => {
     try {
-        await mongoose.connect("mongodb://127.0.0.1:27017/konak", 
+        await mongoose.connect("mongodb://127.0.0.1:27017/akbaslar", 
         {
             useNewURLParser: true,
             useUnifiedTopology: true
@@ -25,6 +25,6 @@ const connectDB = async () => {
     } catch (err) {
         console.log(err)
     }
-} */
+}*/
 
 module.exports = connectDB

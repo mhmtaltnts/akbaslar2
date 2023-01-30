@@ -61,14 +61,14 @@ const NotesList = () => {
                 <SearchBar setSearch={setSearch} />
             </div>
 
-            <table className={`table table-notes ${calClass}`}>
+            <table className={`table ${calClass}`}>
                 <thead className="table__thead">
                     <tr>
-                        <th scope="col" className="mobile" >Getiren Çekici</th>
+                        <th scope="col" >Getiren Çekici</th>
                         <th scope="col" >Dorse Plakası</th>
                         <th scope="col" className="mobile">Firma</th>
                         <th scope="col" className="mobile">Malın Cinsi</th>
-                        <th scope="col" >Gümrük Bilgi</th>
+                        <th scope="col" className="mobile">Gümrük Bilgi</th>
                         <th scope="col" className="mobile">Giriş Tarihi</th>
                         <th scope="col" className="mobile">Giriş Yapan</th>
                         <th scope="col" className="">   </th>
@@ -113,11 +113,11 @@ const Note = ({ noteId }) => {
 
         return (
             <tr className="table__row">
-                <td className="table__cell mobile">{note.getiren}</td>
+                <td className="table__cell">{note.getiren}</td>
                 <td className="table__cell">{note.dorse}</td>
                 <td className="table__cell mobile">{note.firma}</td>
                 <td className="table__cell mobile">{note.mal}</td>
-                <td className="table__cell ">{note.gumruk}</td>
+                <td className="table__cell mobile">{note.gumruk}</td>
                 <td className="table__cell mobile">{created}</td>
                 <td className="table__cell mobile">{note.girisYapan}</td>
 
